@@ -1,0 +1,25 @@
+{
+  "name": "discord-activity-color-bot",
+  "version": "0.0.1",
+  "description": "A Discord bot that changes members' color based on their activity",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Philainel/discord-activity-color-bot.git"
+  },
+  "keywords": [
+    "Discord",
+    "bot",
+    "activity",
+    "color"
+  ],
+  "author": "Philainel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Philainel/discord-activity-color-bot/issues"
+  },
+  "homepage": "https://github.com/Philainel/discord-activity-color-bot#readme"
+}
