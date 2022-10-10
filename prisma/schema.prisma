@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Guild {
+  id              String            @id @default(auto()) @map("_id") @db.ObjectId
+  discord         String            @unique
+  inited          Boolean           @default(false)
+  rolesCount      Int               @default(50)
+  rolesIDs        String[]          @default([])
+  highestRole     String?
+  whitelistMode   Boolean           @default(false)
+  Message         Message[]
+  ExcludedChannel ExcludedChannel[]
+}
+
+model Member {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  discord        String
+  guildDiscordID String
+  currentRole    String
+  Message        Message[]
+}
+
+model Message {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  date     DateTime
+  member   Member   @relation(fields: [memberId], references: [id])
+  memberId String   @db.ObjectId
+  guild    Guild    @relation(fields: [guildId], references: [id])
+  guildId  String   @db.ObjectId
+}
+
+model ExcludedChannel {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  discord String
+  guild   Guild  @relation(fields: [guildId], references: [id])
+  guildId String @db.ObjectId
+}

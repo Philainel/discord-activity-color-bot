@@ -4,7 +4,11 @@
   "description": "A Discord bot that changes members' color based on their activity",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "build": "tsc",
+    "remove-build": "rm index.js && rm src/**/*.js",
+    "dev": "nodemon index.ts",
+    "dev-db": "mongod --dbpath .cache/db --replSet rs0"
   },
   "repository": {
     "type": "git",
@@ -21,5 +25,15 @@
   "bugs": {
     "url": "https://github.com/Philainel/discord-activity-color-bot/issues"
   },
-  "homepage": "https://github.com/Philainel/discord-activity-color-bot#readme"
+  "homepage": "https://github.com/Philainel/discord-activity-color-bot#readme",
+  "dependencies": {
+    "@prisma/client": "^4.4.0",
+    "@types/node": "^18.8.0",
+    "discord.js": "^14.5.0",
+    "dotenv": "^16.0.3",
+    "prisma": "^4.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
