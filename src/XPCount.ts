@@ -1,5 +1,4 @@
-import { prisma } from "@prisma/client";
-import { Message, VoiceChannel, VoiceState } from "discord.js";
+import { Message } from "discord.js";
 import App from "./types/App";
 
 export default (app: App) => {

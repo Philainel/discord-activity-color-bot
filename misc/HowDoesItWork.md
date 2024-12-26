@@ -1,10 +1,11 @@
 # How does it works
 
-n - current role 0 <= n <= A
-m - current points, 0 <= m <= 1
+n - current role 0 <= n <= A  
+m - current points, 0 <= m <= 1  
 A - roles count
 
-n = mA, m depends on messeges percentage and calculates every message with one hour cooldown.
+n = mA  
+m depends on message percentage and calculates every message with one hour cooldown.
 Bot register every messages with 5-seconds cooldown and deletes messages older than one week.
 
 There're three ways to calculate m (x - messages percentage):
